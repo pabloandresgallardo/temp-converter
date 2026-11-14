@@ -51,6 +51,6 @@ hexagonal en Go y feature-based React con TDD estricto.
 
 ## Artefactos relacionados
 
-- Fundaciones: `.ai/project/architecture.md`
-- Diagrama de arquitectura: `.ai/project/diagrams/architecture-overview.md`
-- Flujo de datos: `.ai/project/diagrams/data-flow.md`
+- Fundaciones: `.ai/architecture.md`
+- Diagrama de arquitectura: `.ai/diagrams/architecture-overview.md`
+- Flujo de datos: `.ai/diagrams/data-flow.md`
