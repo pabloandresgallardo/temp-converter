@@ -1,0 +1,12 @@
+graph LR
+  subgraph FE["Frontend — React 18 + Vite + TypeScript"]
+    UI[Components] --> CTX[Context API]
+    UI --> CLIENT[API Client]
+  end
+  subgraph BE["Backend — Go 1.23 · net/http · Hexagonal"]
+    HANDLER[HTTP Handlers] --> UC[Use Cases]
+    UC --> DOMAIN[Domain]
+    UC --> PORT[Port Interface]
+    PORT --> REPO[In-Memory Repo]
+  end
+  CLIENT -- "REST API" --> HANDLER

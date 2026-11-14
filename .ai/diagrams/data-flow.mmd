@@ -1,0 +1,20 @@
+sequenceDiagram
+  actor User
+  participant FE as React 18
+  participant BE as Go 1.23
+  participant MEM as In-Memory Repo
+
+  User->>FE: ingresa valor + unidades
+  FE->>BE: POST /convert
+  BE->>BE: ConvertTemperature
+  BE->>MEM: Save(ConversionRecord)
+  MEM-->>BE: ok
+  BE-->>FE: result
+  FE-->>User: resultado + historial
+
+  User->>FE: recarga historial
+  FE->>BE: GET /history
+  BE->>MEM: FindAll()
+  MEM-->>BE: records
+  BE-->>FE: JSON array
+  FE-->>User: historial renderizado
